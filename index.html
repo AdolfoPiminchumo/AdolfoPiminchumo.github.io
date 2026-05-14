@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adolfo Piminchumo | Physics Researcher</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f0f4f8;
+            color: #1a2a3a;
+            line-height: 1.6;
+        }
+
+        /* Layout: left sidebar + right content */
+        .container {
+            display: flex;
+            max-width: 1300px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.05);
+            min-height: 100vh;
+        }
+
+        /* LEFT SIDEBAR */
+        .sidebar {
+            width: 320px;
+            background: #2c3e50;
+            color: white;
+            padding: 40px 25px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            overflow-y: auto;
+        }
+
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #3498db;
+            margin-bottom: 20px;
+        }
+
+        .sidebar h1 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            color: white;
+        }
+
+        .sidebar .title {
+            color: #bdc3c7;
+            font-size: 0.9rem;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #34495e;
+            padding-bottom: 15px;
+        }
+
+        .social-links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            color: #ecf0f1;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .social-links a:hover {
+            color: #3498db;
+            transform: translateX(5px);
+        }
+
+        /* RIGHT CONTENT */
+        .main-content {
+            flex: 1;
+            padding: 40px 50px;
+            background: white;
+        }
+
+        /* Horizontal tabs menu */
+        .tabs {
+            display: flex;
+            gap: 5px;
+            border-bottom: 2px solid #e0e7ef;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            background: none;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1rem;
+            cursor: pointer;
+            color: #2c3e50;
+            font-weight: 500;
+            transition: 0.2s;
+            border-radius: 30px 30px 0 0;
+        }
+
+        .tab-btn:hover {
+            background: #e8f0fe;
+            color: #1a5276;
+        }
+
+        .tab-btn.active {
+            background: #3498db;
+            color: white;
+        }
+
+        /* Content panels */
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h2 {
+            color: #2c3e50;
+            border-left: 5px solid #3498db;
+            padding-left: 15px;
+            margin-bottom: 25px;
+            font-size: 1.8rem;
+        }
+
+        h3 {
+            color: #2c3e50;
+            margin: 20px 0 10px 0;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        ul li {
+            margin-bottom: 12px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        ul li::before {
+            content: "▹";
+            color: #3498db;
+            position: absolute;
+            left: 0;
+        }
+
+        .publication-item, .award-item {
+            margin-bottom: 15px;
+            padding-left: 20px;
+            border-left: 2px solid #3498db;
+        }
+
+        .footer {
+            margin-top: 50px;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #7f8c8d;
+            border-top: 1px solid #e0e7ef;
+            padding-top: 20px;
+        }
+
+        @media (max-width: 800px) {
+            .container {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
+            .main-content {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- LEFT SIDEBAR -->
+    <div class="sidebar">
+        <img src="profile.jpg" alt="Adolfo Piminchumo" class="profile-img" onerror="this.src='https://via.placeholder.com/180?text=Photo'">
+        <h1>Adolfo Piminchumo</h1>
+        <div class="title">Physics with Astrophysics | Experimental Particle Physics</div>
+        <div class="social-links">
+            <a href="#">🔗 LinkedIn</a>
+            <a href="#">📖 Google Scholar</a>
+            <a href="#">🐙 GitHub</a>
+            <a href="#">🆔 ORCID</a>
+            <a href="#">✉️ adolfo.piminchumo99@gmail.com</a>
+        </div>
+    </div>
+
+    <!-- RIGHT CONTENT -->
+    <div class="main-content">
+        <!-- Horizontal Menu Tabs -->
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="about">About Me</button>
+            <button class="tab-btn" data-tab="research">Research</button>
+            <button class="tab-btn" data-tab="publications">Publications</button>
+            <button class="tab-btn" data-tab="education">Education</button>
+            <button class="tab-btn" data-tab="awards">Awards</button>
+            <button class="tab-btn" data-tab="extra">Extracurriculars</button>
+        </div>
+
+        <!-- ABOUT ME -->
+        <div id="about" class="tab-content active">
+            <h2>About Me</h2>
+            <p>Mechanical Engineering graduate and current Physics with Astrophysics student (penultimate year) at the University of Bristol. Passionate about experimental particle physics, flavour physics, rare decays, and CP violation. Experienced in numerical simulations, computational fluid dynamics, spectroscopy, and data analysis.</p>
+            <p>I have worked as a research intern at KAUST and University of Alberta, with publications in high-temperature spectroscopy, shock tubes, and environmental fluid mechanics. I enjoy combining computational modeling with experimental work to answer fundamental physics questions.</p>
+        </div>
+
+        <!-- RESEARCH -->
+        <div id="research" class="tab-content">
+            <h2>Research Interests</h2>
+            <ul>
+                <li>Experimental particle physics</li>
+                <li>Flavour physics – rare decays & CP violation</li>
+                <li>High-temperature spectroscopy</li>
+                <li>Computational fluid dynamics (CFD)</li>
+                <li>Shock tube / detonation tube characterization</li>
+            </ul>
+        </div>
+
+        <!-- PUBLICATIONS -->
+        <div id="publications" class="tab-content">
+            <h2>Publications & Conferences</h2>
+            <div class="publication-item">Farouki, I., Chouchen, K., <strong>Piminchumo Sausa, A.</strong>, et al. (2025). Design and Testing of a Laminar Flow Windows High-Temperature Optical Cell. <em>JQSRT</em>, 109565.</div>
+            <div class="publication-item">Subburaj, J., <strong>Piminchumo Sausa, A. R.</strong>, & Farooq, A. (2025). A Combustion-Driven Miniature Shock Tube. <em>AIAA SCITECH 2025</em>, 2141.</div>
+            <div class="publication-item">Subburaj, J., Ngo, T., <strong>Piminchumo Sausa, A. R.</strong>, & Farooq, A. (2024). Combustion Characteristics in a Miniature Detonation Tube. <em>AIAA SCITECH 2024</em>, 0586.</div>
+            <div class="publication-item"><strong>Piminchumo Sausa, A. R.</strong>, Li, S., Kaye, N. B., & Flynn, M. R. (2023). The coalescence of adjacent turbulent plumes. <em>Environmental Fluid Mechanics</em>, 1-29.</div>
+            <div class="publication-item">Flynn, M., Li, S., Kaye, N., & <strong>Piminchumo Sausa, A.</strong> (2023). Plume merger. <em>Bulletin of the APS</em>.</div>
+            <div class="publication-item">Subburaj, J., <strong>Piminchumo Sausa, A. R.</strong>, & Farooq, A. (2026). Characterization of a Miniature Diaphragmless Shock Tube. <em>Shock Waves</em> (in process).</div>
+        </div>
+
+        <!-- EDUCATION -->
+        <div id="education" class="tab-content">
+            <h2>Education</h2>
+            <ul>
+                <li><strong>BSc Physics with Astrophysics (First Class)</strong> – University of Bristol</li>
+                <li><strong>Exchange Programme</strong> – Colorado School of Mines (Mechanical Engineering)</li>
+                <li><strong>Private Pilot License</strong> – Escuela de Aviación Civil del Perú (2nd place in class)</li>
+            </ul>
+        </div>
+
+        <!-- AWARDS -->
+        <div id="awards" class="tab-content">
+            <h2>Awards & Scholarships</h2>
+            <ul>
+                <li>Think Big Scholarship – University of Bristol (2024)</li>
+                <li>Santander Skills Scholarship – Harvard Business Publishing (2023)</li>
+                <li>ELAP Scholarship – Winner (2022)</li>
+                <li>IEC Young Professional – INACAL (2020)</li>
+                <li>National Champion – Brazilian Jiu-Jitsu (2015, 2016)</li>
+            </ul>
+        </div>
+
+        <!-- EXTRACURRICULARS -->
+        <div id="extra" class="tab-content">
+            <h2>Volunteering</h2>
+            <ul>
+                <li>Academic Mentor – Physics I, II & Mathematics I</li>
+                <li>STEAM projects for Peruvian schools – UTEC & Aleup</li>
+                <li>UTEC INVENT</li>
+            </ul>
+            <h2>Hobbies & Interests</h2>
+            <ul>
+                <li>Brazilian Jiu-Jitsu (2x National Champion)</li>
+                <li>Aviation – Private Pilot</li>
+                <li>Computational modeling & open-source physics tools</li>
+            </ul>
+        </div>
+
+        <div class="footer">
+            © 2025 Adolfo Piminchumo
+        </div>
+    </div>
+</div>
+
+<script>
+    // Tab switching logic
+    const buttons = document.querySelectorAll('.tab-btn');
+    const contents = document.querySelectorAll('.tab-content');
+
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+            const tabId = button.getAttribute('data-tab');
+            
+            // Remove active class from all buttons and contents
+            buttons.forEach(btn => btn.classList.remove('active'));
+            contents.forEach(content => content.classList.remove('active'));
+            
+            // Add active class to clicked button and corresponding content
+            button.classList.add('active');
+            document.getElementById(tabId).classList.add('active');
+        });
+    });
+</script>
+</body>
+</html>
