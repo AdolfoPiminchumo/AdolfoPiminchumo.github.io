@@ -57,7 +57,6 @@
             overflow: hidden;
         }
 
-        /* Layout: left sidebar + right content */
         .container {
             display: flex;
             max-width: 1300px;
@@ -67,7 +66,7 @@
             height: 100vh;
         }
 
-        /* LEFT SIDEBAR - SIN SCROLL */
+        /* LEFT SIDEBAR - fixed, no scroll */
         .sidebar {
             width: 320px;
             background: var(--sidebar-bg);
@@ -80,13 +79,19 @@
             transition: background 0.3s;
         }
 
+        /* Centrar la imagen */
+        .profile-img-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
         .profile-img {
             width: 180px;
             height: 180px;
             border-radius: 50%;
             object-fit: cover;
             border: 4px solid #3498db;
-            margin-bottom: 20px;
         }
 
         .sidebar h1 {
@@ -127,7 +132,6 @@
             transform: translateX(5px);
         }
 
-        /* Dark mode toggle button */
         .dark-mode-toggle {
             margin-top: 30px;
             padding-top: 20px;
@@ -150,7 +154,7 @@
             transform: scale(1.05);
         }
 
-        /* RIGHT CONTENT - CON SCROLL */
+        /* RIGHT CONTENT - with scroll */
         .main-content {
             flex: 1;
             padding: 40px 50px;
@@ -160,7 +164,6 @@
             height: 100vh;
         }
 
-        /* Scrollbar styling (optional) */
         .main-content::-webkit-scrollbar {
             width: 8px;
         }
@@ -175,11 +178,6 @@
             border-radius: 10px;
         }
 
-        .main-content::-webkit-scrollbar-thumb:hover {
-            background: #2980b9;
-        }
-
-        /* Horizontal tabs menu */
         .tabs {
             display: flex;
             gap: 5px;
@@ -210,7 +208,6 @@
             color: white;
         }
 
-        /* Content panels */
         .tab-content {
             display: none;
             animation: fadeIn 0.3s ease;
@@ -256,10 +253,26 @@
             left: 0;
         }
 
-        .publication-item, .award-item {
-            margin-bottom: 15px;
+        .publication-item, .job-item {
+            margin-bottom: 20px;
             padding-left: 20px;
             border-left: 2px solid var(--publication-border);
+        }
+
+        .job-title {
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .job-company {
+            color: #3498db;
+            font-weight: 500;
+        }
+
+        .job-date {
+            font-size: 0.85rem;
+            color: var(--footer-color);
+            margin-bottom: 8px;
         }
 
         .footer {
@@ -295,7 +308,9 @@
 <div class="container">
     <!-- LEFT SIDEBAR -->
     <div class="sidebar">
-        <img src="profile.jfif" alt="Adolfo Piminchumo Sausa" class="profile-img" onerror="this.src='https://via.placeholder.com/180?text=Photo'">
+        <div class="profile-img-container">
+            <img src="profile.jfif" alt="Adolfo Piminchumo Sausa" class="profile-img" onerror="this.src='https://via.placeholder.com/180?text=Photo'">
+        </div>
         <h1>Adolfo Piminchumo Sausa</h1>
         <div class="title">Physics with Astrophysics | Experimental Particle Physics</div>
         <div class="social-links">
@@ -306,7 +321,6 @@
             <a href="mailto:adolfo.piminchumo@cern.ch">✉️ adolfo.piminchumo@cern.ch</a>
         </div>
         
-        <!-- Dark Mode Toggle -->
         <div class="dark-mode-toggle">
             <button id="darkModeToggle">🌙 Dark Mode</button>
         </div>
@@ -314,12 +328,12 @@
 
     <!-- RIGHT CONTENT -->
     <div class="main-content">
-        <!-- Horizontal Menu Tabs -->
         <div class="tabs">
             <button class="tab-btn" data-tab="about">About Me</button>
             <button class="tab-btn" data-tab="research">Research</button>
             <button class="tab-btn" data-tab="publications">Publications</button>
             <button class="tab-btn" data-tab="education">Education</button>
+            <button class="tab-btn" data-tab="experience">Work Experience</button>
             <button class="tab-btn" data-tab="awards">Awards</button>
             <button class="tab-btn" data-tab="extra">Extracurriculars</button>
         </div>
@@ -375,7 +389,6 @@
                 <h3>✈️ Private Pilot License – Escuela de Aviación Civil del Perú</h3>
                 <p><strong>2nd place in class</strong></p>
                 
-                <!-- Pilot photo -->
                 <div style="margin: 20px 0; text-align: center;">
                     <img src="pilot.jpeg" alt="Cessna 175 Skyhawk" style="max-width: 70%; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
                     <p style="font-size: 0.85rem; color: var(--caption-color); margin-top: 8px;"><em>Cessna 175 Skyhawk – where everything started</em></p>
@@ -385,6 +398,39 @@
                 The first time I sat in a <strong>Cessna 175 Skyhawk</strong>, I realized physics wasn't just equations on a blackboard — it was lift, drag, thrust, and weight working together in perfect balance. That feeling of takeoff, the hum of the engine, the instruments coming alive… that's when I truly understood the <strong>principles of machines and applied physics</strong>.</p>
                 
                 <p>Learning to fly taught me intuition for aerodynamics, control systems, and the beautiful intersection between theory and real-world engineering. It remains my <strong>favourite place</strong> — not just in the sky, but in my journey as a scientist.</p>
+            </div>
+        </div>
+
+        <!-- WORK EXPERIENCE -->
+        <div id="experience" class="tab-content">
+            <h2>Work Experience</h2>
+            
+            <div class="job-item">
+                <div class="job-title">Math and Physics Tutor</div>
+                <div class="job-company">COMPOS, Oxfordshire, United Kingdom</div>
+                <div class="job-date">2020 - 2022</div>
+                <p>Delivered instruction in mathematics and physics, including topics like mechanics, Taylor series, electrostatics, and harmonic oscillators.</p>
+            </div>
+
+            <div class="job-item">
+                <div class="job-title">Teaching Assistant (Mechanics of Fluids)</div>
+                <div class="job-company">University of Georgia, USA</div>
+                <div class="job-date">2023</div>
+                <p>Lead laboratory sessions, developed problem sets and assessments, designed and implemented a comprehensive Ansys Fluent course curriculum.</p>
+            </div>
+
+            <div class="job-item">
+                <div class="job-title">Research Intern</div>
+                <div class="job-company">King Abdullah University of Science and Technology (KAUST), Saudi Arabia</div>
+                <div class="job-date">2023</div>
+                <p>Employed Python and MATLAB for data acquisition and analysis in spectroscopy and combustion dynamics. Characterized a novel optical cell for high-temperature spectral measurements. Supported ignition kinetics research using miniature shock tubes. Authored 2 conference papers, 1 journal publication, and presented a poster at the SAS-CI conference.</p>
+            </div>
+
+            <div class="job-item">
+                <div class="job-title">Research Intern</div>
+                <div class="job-company">University of Alberta, Canada</div>
+                <div class="job-date">2022</div>
+                <p>Implemented numerical integration methods and MATLAB algorithms to analyse turbulent plume behaviour in stratified and unstratified environments. Contributed to one journal publication and one conference presentation.</p>
             </div>
         </div>
 
@@ -423,7 +469,7 @@
 </div>
 
 <script>
-    // ========== TAB PERSISTENCE ==========
+    // Tab persistence
     const savedTab = localStorage.getItem('activeTab') || 'about';
     
     const buttons = document.querySelectorAll('.tab-btn');
@@ -450,7 +496,7 @@
 
     switchToTab(savedTab);
 
-    // ========== DARK MODE ==========
+    // Dark mode
     const darkModeToggle = document.getElementById('darkModeToggle');
     const savedMode = localStorage.getItem('darkMode');
     
