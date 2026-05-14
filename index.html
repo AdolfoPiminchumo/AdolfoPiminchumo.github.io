@@ -53,6 +53,8 @@
             color: var(--text-primary);
             line-height: 1.6;
             transition: background 0.3s, color 0.3s;
+            height: 100vh;
+            overflow: hidden;
         }
 
         /* Layout: left sidebar + right content */
@@ -62,20 +64,19 @@
             margin: 0 auto;
             background: var(--bg-container);
             box-shadow: 0 0 20px rgba(0,0,0,0.05);
-            min-height: 100vh;
+            height: 100vh;
         }
 
-        /* LEFT SIDEBAR */
+        /* LEFT SIDEBAR - SIN SCROLL */
         .sidebar {
             width: 320px;
             background: var(--sidebar-bg);
             color: var(--sidebar-text);
             padding: 40px 25px;
             text-align: center;
-            position: sticky;
-            top: 0;
+            display: flex;
+            flex-direction: column;
             height: 100vh;
-            overflow-y: auto;
             transition: background 0.3s;
         }
 
@@ -107,6 +108,7 @@
             flex-direction: column;
             gap: 12px;
             margin-top: 20px;
+            flex-grow: 1;
         }
 
         .social-links a {
@@ -148,12 +150,33 @@
             transform: scale(1.05);
         }
 
-        /* RIGHT CONTENT */
+        /* RIGHT CONTENT - CON SCROLL */
         .main-content {
             flex: 1;
             padding: 40px 50px;
             background: var(--bg-container);
             transition: background 0.3s;
+            overflow-y: auto;
+            height: 100vh;
+        }
+
+        /* Scrollbar styling (optional) */
+        .main-content::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .main-content::-webkit-scrollbar-track {
+            background: var(--border-light);
+            border-radius: 10px;
+        }
+
+        .main-content::-webkit-scrollbar-thumb {
+            background: #3498db;
+            border-radius: 10px;
+        }
+
+        .main-content::-webkit-scrollbar-thumb:hover {
+            background: #2980b9;
         }
 
         /* Horizontal tabs menu */
@@ -249,16 +272,21 @@
         }
 
         @media (max-width: 800px) {
+            body {
+                overflow: auto;
+                height: auto;
+            }
             .container {
                 flex-direction: column;
+                height: auto;
             }
             .sidebar {
                 width: 100%;
                 height: auto;
-                position: relative;
             }
             .main-content {
-                padding: 30px 20px;
+                height: auto;
+                overflow-y: visible;
             }
         }
     </style>
@@ -347,7 +375,7 @@
                 <h3>✈️ Private Pilot License – Escuela de Aviación Civil del Perú</h3>
                 <p><strong>2nd place in class</strong></p>
                 
-                <!-- Pilot photo (replace with your own Cessna 175 photo) -->
+                <!-- Pilot photo -->
                 <div style="margin: 20px 0; text-align: center;">
                     <img src="pilot.jpeg" alt="Cessna 175 Skyhawk" style="max-width: 70%; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
                     <p style="font-size: 0.85rem; color: var(--caption-color); margin-top: 8px;"><em>Cessna 175 Skyhawk – where everything started</em></p>
@@ -396,29 +424,23 @@
 
 <script>
     // ========== TAB PERSISTENCE ==========
-    // Get saved tab from localStorage, default to 'about'
     const savedTab = localStorage.getItem('activeTab') || 'about';
     
     const buttons = document.querySelectorAll('.tab-btn');
     const contents = document.querySelectorAll('.tab-content');
 
-    // Function to switch to a specific tab
     function switchToTab(tabId) {
-        // Remove active class from all buttons and contents
         buttons.forEach(btn => btn.classList.remove('active'));
         contents.forEach(content => content.classList.remove('active'));
         
-        // Add active class to matching button and content
         const activeButton = document.querySelector(`.tab-btn[data-tab="${tabId}"]`);
         if (activeButton) activeButton.classList.add('active');
         const activeContent = document.getElementById(tabId);
         if (activeContent) activeContent.classList.add('active');
         
-        // Save to localStorage
         localStorage.setItem('activeTab', tabId);
     }
 
-    // Add click event listeners to all buttons
     buttons.forEach(button => {
         button.addEventListener('click', () => {
             const tabId = button.getAttribute('data-tab');
@@ -426,14 +448,12 @@
         });
     });
 
-    // Load saved tab on page load
     switchToTab(savedTab);
 
     // ========== DARK MODE ==========
     const darkModeToggle = document.getElementById('darkModeToggle');
     const savedMode = localStorage.getItem('darkMode');
     
-    // Apply saved dark mode preference
     if (savedMode === 'enabled') {
         document.body.classList.add('dark');
         darkModeToggle.textContent = '☀️ Light Mode';
