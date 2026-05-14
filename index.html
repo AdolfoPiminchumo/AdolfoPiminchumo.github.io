@@ -11,11 +11,48 @@
             box-sizing: border-box;
         }
 
+        /* Light mode (default) */
+        :root {
+            --bg-body: #f0f4f8;
+            --text-primary: #1a2a3a;
+            --bg-container: white;
+            --sidebar-bg: #2c3e50;
+            --sidebar-text: white;
+            --sidebar-title: #bdc3c7;
+            --border-light: #e0e7ef;
+            --tab-hover: #e8f0fe;
+            --tab-hover-text: #1a5276;
+            --tab-active: #3498db;
+            --heading-color: #2c3e50;
+            --footer-color: #7f8c8d;
+            --publication-border: #3498db;
+            --caption-color: #555;
+        }
+
+        /* Dark mode */
+        body.dark {
+            --bg-body: #121212;
+            --text-primary: #e0e0e0;
+            --bg-container: #1e1e1e;
+            --sidebar-bg: #1a1a2e;
+            --sidebar-text: #e0e0e0;
+            --sidebar-title: #a0a0a0;
+            --border-light: #333;
+            --tab-hover: #2a2a3e;
+            --tab-hover-text: #74b9ff;
+            --tab-active: #0984e3;
+            --heading-color: #74b9ff;
+            --footer-color: #888;
+            --publication-border: #0984e3;
+            --caption-color: #aaa;
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f0f4f8;
-            color: #1a2a3a;
+            background: var(--bg-body);
+            color: var(--text-primary);
             line-height: 1.6;
+            transition: background 0.3s, color 0.3s;
         }
 
         /* Layout: left sidebar + right content */
@@ -23,7 +60,7 @@
             display: flex;
             max-width: 1300px;
             margin: 0 auto;
-            background: white;
+            background: var(--bg-container);
             box-shadow: 0 0 20px rgba(0,0,0,0.05);
             min-height: 100vh;
         }
@@ -31,14 +68,15 @@
         /* LEFT SIDEBAR */
         .sidebar {
             width: 320px;
-            background: #2c3e50;
-            color: white;
+            background: var(--sidebar-bg);
+            color: var(--sidebar-text);
             padding: 40px 25px;
             text-align: center;
             position: sticky;
             top: 0;
             height: 100vh;
             overflow-y: auto;
+            transition: background 0.3s;
         }
 
         .profile-img {
@@ -53,11 +91,11 @@
         .sidebar h1 {
             font-size: 1.8rem;
             margin-bottom: 10px;
-            color: white;
+            color: var(--sidebar-text);
         }
 
         .sidebar .title {
-            color: #bdc3c7;
+            color: var(--sidebar-title);
             font-size: 0.9rem;
             margin-bottom: 30px;
             border-bottom: 1px solid #34495e;
@@ -72,7 +110,7 @@
         }
 
         .social-links a {
-            color: #ecf0f1;
+            color: var(--sidebar-text);
             text-decoration: none;
             font-size: 0.95rem;
             transition: 0.2s;
@@ -87,18 +125,42 @@
             transform: translateX(5px);
         }
 
+        /* Dark mode toggle button */
+        .dark-mode-toggle {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #34495e;
+        }
+
+        .dark-mode-toggle button {
+            background: #3498db;
+            border: none;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: 0.2s;
+        }
+
+        .dark-mode-toggle button:hover {
+            background: #2980b9;
+            transform: scale(1.05);
+        }
+
         /* RIGHT CONTENT */
         .main-content {
             flex: 1;
             padding: 40px 50px;
-            background: white;
+            background: var(--bg-container);
+            transition: background 0.3s;
         }
 
         /* Horizontal tabs menu */
         .tabs {
             display: flex;
             gap: 5px;
-            border-bottom: 2px solid #e0e7ef;
+            border-bottom: 2px solid var(--border-light);
             margin-bottom: 30px;
             flex-wrap: wrap;
         }
@@ -109,19 +171,19 @@
             padding: 12px 25px;
             font-size: 1rem;
             cursor: pointer;
-            color: #2c3e50;
+            color: var(--text-primary);
             font-weight: 500;
             transition: 0.2s;
             border-radius: 30px 30px 0 0;
         }
 
         .tab-btn:hover {
-            background: #e8f0fe;
-            color: #1a5276;
+            background: var(--tab-hover);
+            color: var(--tab-hover-text);
         }
 
         .tab-btn.active {
-            background: #3498db;
+            background: var(--tab-active);
             color: white;
         }
 
@@ -141,7 +203,7 @@
         }
 
         h2 {
-            color: #2c3e50;
+            color: var(--heading-color);
             border-left: 5px solid #3498db;
             padding-left: 15px;
             margin-bottom: 25px;
@@ -149,7 +211,7 @@
         }
 
         h3 {
-            color: #2c3e50;
+            color: var(--heading-color);
             margin: 20px 0 10px 0;
         }
 
@@ -174,15 +236,15 @@
         .publication-item, .award-item {
             margin-bottom: 15px;
             padding-left: 20px;
-            border-left: 2px solid #3498db;
+            border-left: 2px solid var(--publication-border);
         }
 
         .footer {
             margin-top: 50px;
             text-align: center;
             font-size: 0.8rem;
-            color: #7f8c8d;
-            border-top: 1px solid #e0e7ef;
+            color: var(--footer-color);
+            border-top: 1px solid var(--border-light);
             padding-top: 20px;
         }
 
@@ -215,13 +277,18 @@
             <a href="https://orcid.org/0000-0002-3806-6625" target="_blank">🆔 ORCID</a>
             <a href="mailto:adolfo.piminchumo@cern.ch">✉️ adolfo.piminchumo@cern.ch</a>
         </div>
+        
+        <!-- Dark Mode Toggle -->
+        <div class="dark-mode-toggle">
+            <button id="darkModeToggle">🌙 Dark Mode</button>
+        </div>
     </div>
 
     <!-- RIGHT CONTENT -->
     <div class="main-content">
         <!-- Horizontal Menu Tabs -->
         <div class="tabs">
-            <button class="tab-btn active" data-tab="about">About Me</button>
+            <button class="tab-btn" data-tab="about">About Me</button>
             <button class="tab-btn" data-tab="research">Research</button>
             <button class="tab-btn" data-tab="publications">Publications</button>
             <button class="tab-btn" data-tab="education">Education</button>
@@ -230,7 +297,7 @@
         </div>
 
         <!-- ABOUT ME -->
-        <div id="about" class="tab-content active">
+        <div id="about" class="tab-content">
             <h2>About Me</h2>
             <p>Mechanical Engineering graduate and current Physics with Astrophysics student (penultimate year) at the University of Bristol. Passionate about experimental particle physics, flavour physics, rare decays, and CP violation. Experienced in numerical simulations, computational fluid dynamics, spectroscopy, and data analysis.</p>
             <p>I have worked as a research intern at KAUST and University of Alberta, with publications in high-temperature spectroscopy, shock tubes, and environmental fluid mechanics. I enjoy combining computational modeling with experimental work to answer fundamental physics questions.</p>
@@ -283,11 +350,11 @@
                 <!-- Pilot photo (replace with your own Cessna 175 photo) -->
                 <div style="margin: 20px 0; text-align: center;">
                     <img src="pilot.jpeg" alt="Cessna 175 Skyhawk" style="max-width: 70%; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
-                    <p style="font-size: 0.85rem; color: #555; margin-top: 8px;"><em>Cessna 175 Skyhawk – where everything started</em></p>
+                    <p style="font-size: 0.85rem; color: var(--caption-color); margin-top: 8px;"><em>Cessna 175 Skyhawk – where everything started</em></p>
                 </div>
         
                 <p><strong>Where everything started ✈️</strong><br>
-                The first time I sat in a <strong>Cessna 175 Skyhawk</strong>, I realized physics wasn’t just equations on a blackboard — it was lift, drag, thrust, and weight working together in perfect balance. That feeling of takeoff, the hum of the engine, the instruments coming alive… that’s when I truly understood the <strong>principles of machines and applied physics</strong>.</p>
+                The first time I sat in a <strong>Cessna 175 Skyhawk</strong>, I realized physics wasn't just equations on a blackboard — it was lift, drag, thrust, and weight working together in perfect balance. That feeling of takeoff, the hum of the engine, the instruments coming alive… that's when I truly understood the <strong>principles of machines and applied physics</strong>.</p>
                 
                 <p>Learning to fly taught me intuition for aerodynamics, control systems, and the beautiful intersection between theory and real-world engineering. It remains my <strong>favourite place</strong> — not just in the sky, but in my journey as a scientist.</p>
             </div>
@@ -328,22 +395,60 @@
 </div>
 
 <script>
-    // Tab switching logic
+    // ========== TAB PERSISTENCE ==========
+    // Get saved tab from localStorage, default to 'about'
+    const savedTab = localStorage.getItem('activeTab') || 'about';
+    
     const buttons = document.querySelectorAll('.tab-btn');
     const contents = document.querySelectorAll('.tab-content');
 
+    // Function to switch to a specific tab
+    function switchToTab(tabId) {
+        // Remove active class from all buttons and contents
+        buttons.forEach(btn => btn.classList.remove('active'));
+        contents.forEach(content => content.classList.remove('active'));
+        
+        // Add active class to matching button and content
+        const activeButton = document.querySelector(`.tab-btn[data-tab="${tabId}"]`);
+        if (activeButton) activeButton.classList.add('active');
+        const activeContent = document.getElementById(tabId);
+        if (activeContent) activeContent.classList.add('active');
+        
+        // Save to localStorage
+        localStorage.setItem('activeTab', tabId);
+    }
+
+    // Add click event listeners to all buttons
     buttons.forEach(button => {
         button.addEventListener('click', () => {
             const tabId = button.getAttribute('data-tab');
-            
-            // Remove active class from all buttons and contents
-            buttons.forEach(btn => btn.classList.remove('active'));
-            contents.forEach(content => content.classList.remove('active'));
-            
-            // Add active class to clicked button and corresponding content
-            button.classList.add('active');
-            document.getElementById(tabId).classList.add('active');
+            switchToTab(tabId);
         });
+    });
+
+    // Load saved tab on page load
+    switchToTab(savedTab);
+
+    // ========== DARK MODE ==========
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    const savedMode = localStorage.getItem('darkMode');
+    
+    // Apply saved dark mode preference
+    if (savedMode === 'enabled') {
+        document.body.classList.add('dark');
+        darkModeToggle.textContent = '☀️ Light Mode';
+    }
+    
+    darkModeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark');
+        
+        if (document.body.classList.contains('dark')) {
+            localStorage.setItem('darkMode', 'enabled');
+            darkModeToggle.textContent = '☀️ Light Mode';
+        } else {
+            localStorage.setItem('darkMode', 'disabled');
+            darkModeToggle.textContent = '🌙 Dark Mode';
+        }
     });
 </script>
 </body>
