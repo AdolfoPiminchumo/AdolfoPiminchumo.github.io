@@ -38,6 +38,7 @@
             <button class="tab-btn" data-tab="publications">Publications</button>
             <button class="tab-btn" data-tab="education">Education</button>
             <button class="tab-btn" data-tab="experience">Work Experience</button>
+            <button class="tab-btn" data-tab="software">Software</button>
             <button class="tab-btn" data-tab="awards">Awards</button>
             <button class="tab-btn" data-tab="extra">Extracurriculars</button>
         </div>
@@ -149,6 +150,105 @@
                 <li>National Champion – Brazilian Jiu-Jitsu (2015, 2016)</li>
             </ul>
         </div>
+        <!-- SOFTWARE / PROJECTS -->
+        <div id="software" class="tab-content">
+            <h2>Software Projects</h2>
+            
+            <div class="project-card">
+                <h3>🎯 sWeights for Muon PID Calibration (B⁺ → K⁺ J/ψ)</h3>
+                
+                <div class="project-description">
+                    <p>
+                        <strong>sWeights</strong> are a statistical tool used in high-energy physics to 
+                        separate signal from background in a mixed sample. Using a control variable 
+                        (typically mass), sWeights assign each event a probability of being signal, 
+                        allowing pure signal distributions to be extracted for any other variable 
+                        (such as PID response). This is particularly important for <strong>Muon 
+                        Identification (MuonID)</strong> calibration, where we need to measure the 
+                        efficiency and misidentification rates using clean signal samples.
+                    </p>
+        
+                    <p>
+                        This code is an adaptation of the original 
+                        <a href="https://gitlab.cern.ch/lhcb-rta/pidcalib-sweight-fits" target="_blank">pidcalib-sweight-fits</a> 
+                        package developed by <strong>Michele Atzeni</strong>. The original framework 
+                        provides sWeight fits for various PID calibration channels. This adaptation 
+                        focuses specifically on the <strong>B⁺ → K⁺ J/ψ (→ μ⁺μ⁻)</strong> decay, 
+                        which serves as an <strong>alternative muon PID channel</strong> for Run 3 
+                        of the LHCb experiment.
+                    </p>
+        
+                    <p>
+                        The B⁺ → K⁺ J/ψ channel is particularly well-suited for muon identification 
+                        studies because:
+                    </p>
+                    <ul>
+                        <li>The J/ψ → μ⁺μ⁻ decay provides a clean muon pair with known mass</li>
+                        <li>The B meson mass peak (5279 MeV) is well-separated from background</li>
+                        <li>High statistics available in Run 3 data</li>
+                        <li>Independent cross-check for muon PID efficiency measurements</li>
+                    </ul>
+        
+                    <p>
+                        The signal shape is modeled using a <strong>Double-sided Crystal Ball</strong> 
+                        function, which accounts for the asymmetric tails of the B⁺ peak due to final 
+                        state radiation and detector effects. This provides a more accurate description 
+                        than a simple Gaussian, resulting in better sWeight extraction.
+                    </p>
+                </div>
+        
+                <!-- Figures -->
+                <div class="project-figure">
+                    <div class="figure-container" style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
+                        <div class="figure">
+                            <img src="fit_plot.png" alt="B⁺ → K⁺ J/ψ Mass Fit" style="width: 100%; max-width: 500px; border: 1px solid var(--border-light); border-radius: 8px;">
+                            <p class="caption" style="font-size: 0.85rem; color: var(--footer-color); margin-top: 8px; text-align: center;">
+                                <strong>Figure 1:</strong> B⁺ → K⁺ J/ψ mass fit with Double Crystal Ball 
+                                signal shape (green) and exponential background (blue). The fit achieves 
+                                χ²/ndof = 1.41, indicating excellent agreement with data.
+                            </p>
+                        </div>
+                        <div class="figure">
+                            <img src="sweight_plot.png" alt="sWeight vs Mass" style="width: 100%; max-width: 500px; border: 1px solid var(--border-light); border-radius: 8px;">
+                            <p class="caption" style="font-size: 0.85rem; color: var(--footer-color); margin-top: 8px; text-align: center;">
+                                <strong>Figure 2:</strong> sWeight as a function of the B meson mass. 
+                                Events near the peak (5278 MeV) have high signal purity (sWeight ≈ 1), 
+                                while sideband events are predominantly background (sWeight ≈ 0).
+                            </p>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Features -->
+                <div class="project-features">
+                    <h3>⚙️ Features</h3>
+                    <ul>
+                        <li><strong>Double Crystal Ball</strong> signal model for B⁺ → K⁺ J/ψ</li>
+                        <li><strong>Maximum likelihood fit</strong> with Poisson statistics</li>
+                        <li><strong>sWeight extraction</strong> using sPlot technique</li>
+                        <li>Optimized for LHCb Run 3 data processing</li>
+                    </ul>
+                </div>
+        
+                <!-- Code Repository -->
+                <div class="project-repo">
+                    <h3>📂 Code Repository</h3>
+                    <p>
+                        <a href="https://gitlab.cern.ch/apiminch/pid_muon" target="_blank">
+                            <code>https://gitlab.cern.ch/apiminch/pid_muon</code>
+                        </a>
+                    </p>
+                    <p>
+                        <strong>Original reference:</strong> 
+                        <a href="https://gitlab.cern.ch/lhcb-rta/pidcalib-sweight-fits" target="_blank">
+                            Michele Atzeni - pidcalib-sweight-fits
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        
 
         <!-- EXTRACURRICULARS -->
         <div id="extra" class="tab-content">
