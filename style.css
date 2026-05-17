@@ -127,8 +127,8 @@ body {
 }
 
 .social-icon {
-    width: 20px;
-    height: 20px;
+    width: 16px;
+    height: 16px;
     filter: brightness(0) invert(1);
     transition: 0.2s;
 }
