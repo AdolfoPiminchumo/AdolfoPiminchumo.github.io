@@ -1,0 +1,47 @@
+<svg viewBox="0 0 480 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Stylized particle collision diagram">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="45%" r="75%">
+      <stop offset="0%" stop-color="#eaf3fb"/>
+      <stop offset="100%" stop-color="#dcebf7"/>
+    </radialGradient>
+    <radialGradient id="core" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="45%" stop-color="#74b9ff"/>
+      <stop offset="100%" stop-color="#3498db"/>
+    </radialGradient>
+  </defs>
+
+  <rect x="0" y="0" width="480" height="260" rx="14" fill="url(#bg)"/>
+
+  <!-- concentric detector rings -->
+  <circle cx="240" cy="130" r="95" fill="none" stroke="#3498db" stroke-opacity="0.18" stroke-width="10"/>
+  <circle cx="240" cy="130" r="70" fill="none" stroke="#3498db" stroke-opacity="0.28" stroke-width="8"/>
+  <circle cx="240" cy="130" r="45" fill="none" stroke="#3498db" stroke-opacity="0.4" stroke-width="6"/>
+
+  <!-- particle tracks radiating from collision point -->
+  <g stroke-linecap="round" fill="none">
+    <path d="M240,130 L120,60" stroke="#2c3e50" stroke-width="2"/>
+    <path d="M240,130 L90,150" stroke="#2c3e50" stroke-width="2"/>
+    <path d="M240,130 L150,225" stroke="#2c3e50" stroke-width="2"/>
+    <path d="M240,130 L330,235" stroke="#2c3e50" stroke-width="2"/>
+    <path d="M240,130 L400,170" stroke="#2c3e50" stroke-width="2"/>
+    <path d="M240,130 L410,80" stroke="#2c3e50" stroke-width="2"/>
+    <path d="M240,130 L300,40" stroke="#2c3e50" stroke-width="2"/>
+
+    <!-- a couple of curved tracks, as if bent by a magnetic field -->
+    <path d="M240,130 Q190,90 165,45" stroke="#0984e3" stroke-width="2.5"/>
+    <path d="M240,130 Q300,170 355,205" stroke="#0984e3" stroke-width="2.5"/>
+  </g>
+
+  <!-- collision point -->
+  <circle cx="240" cy="130" r="14" fill="url(#core)"/>
+
+  <!-- small hit markers along a few tracks -->
+  <g fill="#e74c3c">
+    <circle cx="180" cy="80" r="3"/>
+    <circle cx="150" cy="100" r="3"/>
+    <circle cx="200" cy="185" r="3"/>
+    <circle cx="320" cy="200" r="3"/>
+    <circle cx="330" cy="110" r="3"/>
+  </g>
+</svg>
