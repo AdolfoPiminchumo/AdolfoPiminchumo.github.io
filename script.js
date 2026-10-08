@@ -1,3 +1,9 @@
+// ========== TAB NAVIGATION (URL hash based) ==========
+const buttons = document.querySelectorAll('.tab-btn');
+const contents = document.querySelectorAll('.tab-content');
+const validTabIds = Array.from(buttons).map(btn => btn.getAttribute('data-tab'));
+const defaultTab = 'about';
+
 function getTabFromHash() {
     const requested = window.location.hash.replace('#', '');
     return validTabIds.includes(requested) ? requested : defaultTab;
