@@ -4,36 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adolfo Piminchumo | Physics Researcher</title>
+    <meta name="description" content="Adolfo Piminchumo Sausa — Physics student at Bristol, working on LHCb, Belle II and machine learning for CMS. Founder of Puentes hacia la Ciencia.">
     <link rel="icon" type="image/svg+xml" href="about-figure.svg">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<a class="skip-link" href="#main-content">Skip to content</a>
 <div class="container">
     <!-- LEFT SIDEBAR -->
     <div class="sidebar">
         <div class="profile-img-container">
-            <img src="profile.jfif" alt="Adolfo Piminchumo Sausa" class="profile-img" onerror="this.src='https://via.placeholder.com/180?text=Photo'">
+            <img src="profile.jfif" alt="Adolfo Piminchumo Sausa" class="profile-img">
         </div>
         <h1>Adolfo Piminchumo Sausa</h1>
-        <div class="title">Physics with Astrophysics | Experimental Particle Physics</div>
+        <div class="title">BSc Physics · University of Bristol<br>Experimental Particle Physics</div>
         <div class="social-links">
-            <a href="https://www.linkedin.com/in/adolfopiminchumo" target="_blank">
+            <a href="https://www.linkedin.com/in/adolfopiminchumo" target="_blank" rel="noopener noreferrer">
                 <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn" class="social-icon">
                 LinkedIn
             </a>
-            <a href="https://scholar.google.com/citations?user=7sFOKJAAAAAJ&hl=en" target="_blank">
+            <a href="https://scholar.google.com/citations?user=7sFOKJAAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">
                 <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/googlescholar.svg" alt="Google Scholar" class="social-icon">
                 Google Scholar
             </a>
-            <a href="https://github.com/AdolfoPiminchumo" target="_blank">
+            <a href="https://github.com/AdolfoPiminchumo" target="_blank" rel="noopener noreferrer">
                 <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/github.svg" alt="GitHub" class="social-icon">
                 GitHub
             </a>
-            <a href="https://gitlab.cern.ch/apiminch" target="_blank">
+            <a href="https://gitlab.cern.ch/apiminch" target="_blank" rel="noopener noreferrer">
                 <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/gitlab.svg" alt="GitLab" class="social-icon">
                 GitLab CERN
             </a>
-            <a href="https://orcid.org/0000-0002-3806-6625" target="_blank">
+            <a href="https://orcid.org/0000-0002-3806-6625" target="_blank" rel="noopener noreferrer">
                 <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/orcid.svg" alt="ORCID" class="social-icon">
                 ORCID
             </a>
@@ -44,7 +46,7 @@
     </div>
 
     <!-- RIGHT CONTENT -->
-    <div class="main-content">
+    <main class="main-content" id="main-content">
         <!-- Dark Mode Toggle - Top Right -->
         <div class="dark-mode-toggle-top">
             <button id="darkModeToggle">Dark Mode</button>
@@ -59,14 +61,18 @@
             <button type="button" class="tab-btn" data-tab="experience" role="tab" aria-selected="false">Work Experience</button>
             <button type="button" class="tab-btn" data-tab="software" role="tab" aria-selected="false">Software</button>
             <button type="button" class="tab-btn" data-tab="awards" role="tab" aria-selected="false">Awards</button>
+            <button type="button" class="tab-btn" data-tab="puentes" role="tab" aria-selected="false">Puentes hacia la Ciencia</button>
             <button type="button" class="tab-btn" data-tab="extra" role="tab" aria-selected="false">Extracurriculars</button>
         </div>
 
         <!-- ABOUT ME -->
         <div id="about" class="tab-content active" role="tabpanel">
-            <h2>About Me</h2>
-            <p>Mechanical Engineering graduate and current Physics with Astrophysics student (penultimate year) at the University of Bristol. Passionate about experimental particle physics, flavour physics, rare decays, and CP violation. Experienced in numerical simulations, computational fluid dynamics, spectroscopy, and data analysis.</p>
-            <p>I have worked as a research intern at KAUST and University of Alberta, with publications in high-temperature spectroscopy, shock tubes, and environmental fluid mechanics. I enjoy combining computational modeling with experimental work to answer fundamental physics questions.</p>
+            <div class="eyebrow">Physics · Research · Education</div>
+            <h2>From engineering to particle physics.</h2>
+            <p class="lead">I am a final-year Physics student at the University of Bristol and a Mechanical Engineering graduate from UTEC, Peru. My interests are in flavour physics, CP violation and precision measurements that test the Standard Model.</p>
+            <p>I work with the UTEC LHCb team on Run 3 particle identification calibration and B-meson decays. At Bristol, my final-year project explores the interpretability of machine-learning models for the CMS Level-1 Trigger at the HL-LHC.</p>
+            <p>My research has taken me to the University of Alberta, KAUST and IFJ PAN, from turbulent plumes and laser diagnostics to tau polarisation in Belle II. I enjoy using computation to understand experimental data and the physics behind it.</p>
+            <div class="intro-callout"><span class="eyebrow">Science beyond the laboratory</span><h3>Puentes hacia la Ciencia</h3><p>I founded a practical science initiative for school students in Peru, helping them explore physics and engineering by building their own projects.</p><a class="text-link" href="#puentes">Explore the initiative →</a></div>
         </div>
 
         <!-- RESEARCH -->
@@ -75,6 +81,8 @@
             <ul>
                 <li>Experimental particle physics</li>
                 <li>Flavour physics – rare decays & CP violation</li>
+                <li>Machine-learning interpretability for particle physics triggers</li>
+                <li>Tau polarisation in semitauonic B decays</li>
                 <li>High-temperature spectroscopy</li>
                 <li>Computational fluid dynamics (CFD)</li>
                 <li>Shock tube / detonation tube characterization</li>
@@ -84,10 +92,10 @@
         <!-- PUBLICATIONS -->
         <div id="publications" class="tab-content" role="tabpanel">
             <h2>Publications & Conferences</h2>
-            <div class="publication-item">Farouki, I., Chouchen, K., <strong>Piminchumo Sausa, A.</strong>, et al. (2025). Design and Testing of a Laminar Flow Windows High-Temperature Optical Cell. <em>JQSRT</em>, 109565.</div>
-            <div class="publication-item">Subburaj, J., <strong>Piminchumo Sausa, A. R.</strong>, & Farooq, A. (2025). A Combustion-Driven Miniature Shock Tube. <em>AIAA SCITECH 2025</em>, 2141.</div>
-            <div class="publication-item">Subburaj, J., Ngo, T., <strong>Piminchumo Sausa, A. R.</strong>, & Farooq, A. (2024). Combustion Characteristics in a Miniature Detonation Tube. <em>AIAA SCITECH 2024</em>, 0586.</div>
-            <div class="publication-item"><strong>Piminchumo Sausa, A. R.</strong>, Li, S., Kaye, N. B., & Flynn, M. R. (2023). The coalescence of adjacent turbulent plumes. <em>Environmental Fluid Mechanics</em>, 1-29.</div>
+            <div class="publication-item">Farouki, I., Chouchen, K., <strong>Piminchumo Sausa, A.</strong>, et al. (2025). Design and Testing of a Laminar Flow Windows High-Temperature Optical Cell. <em>JQSRT</em>, 109565. <a href="https://doi.org/10.1016/j.jqsrt.2025.109565" target="_blank" rel="noopener noreferrer">DOI ↗</a></div>
+            <div class="publication-item">Subburaj, J., <strong>Piminchumo Sausa, A. R.</strong>, & Farooq, A. (2025). A Combustion-Driven Miniature Shock Tube. <em>AIAA SCITECH 2025</em>, 2141. <a href="https://doi.org/10.2514/6.2025-2141" target="_blank" rel="noopener noreferrer">DOI ↗</a></div>
+            <div class="publication-item">Subburaj, J., Ngo, T., <strong>Piminchumo Sausa, A. R.</strong>, & Farooq, A. (2024). Combustion Characteristics in a Miniature Detonation Tube. <em>AIAA SCITECH 2024</em>, 0586. <a href="https://doi.org/10.2514/6.2024-0586" target="_blank" rel="noopener noreferrer">DOI ↗</a></div>
+            <div class="publication-item"><strong>Piminchumo Sausa, A. R.</strong>, Li, S., Kaye, N. B., & Flynn, M. R. (2023). The coalescence of adjacent turbulent plumes. <em>Environmental Fluid Mechanics</em>, 1-29. <a href="https://doi.org/10.1007/s10652-023-09952-y" target="_blank" rel="noopener noreferrer">DOI ↗</a></div>
             <div class="publication-item">Flynn, M., Li, S., Kaye, N., & <strong>Piminchumo Sausa, A.</strong> (2023). Plume merger. <em>Bulletin of the APS</em>.</div>
             <div class="publication-item">Subburaj, J., <strong>Piminchumo Sausa, A. R.</strong>, & Farooq, A. (2026). Characterization of a Miniature Diaphragmless Shock Tube. <em>Shock Waves</em> (in process).</div>
         </div>
@@ -98,11 +106,11 @@
             
             <div style="margin-bottom: 30px;">
                 <h3>University of Bristol</h3>
-                <p><strong>BSc Physics with Astrophysics (First Class)</strong><br>
-                Year 1 Physics Representative | Student Helper for the School of Physics<br>
-                Societies: FS AI, Bij, Chaos</p>
+                <p><strong>BSc Physics — in progress, September 2024–June 2027</strong><br>
+                Relevant final-year units: Particle Physics; Advanced Computational Physics &amp; Machine Learning; Advanced Classical Mechanics.<br>Auditing Quantum Field Theory (attendance only; not assessed).</p>
             </div>
         
+            <div class="education-item"><h3>Universidad de Ingeniería y Tecnología (UTEC)</h3><p><strong>Mechanical Engineering</strong><br>Lima, Peru · GPA: 15.6/20.<br>Exchange programme at Colorado School of Mines.</p></div>
             <div style="margin-bottom: 30px;">
                 <h3>Colorado School of Mines</h3>
                 <p><strong>Exchange Programme – Mechanical Engineering</strong><br>
@@ -114,12 +122,12 @@
                 <p><strong>2nd place in class</strong></p>
                 
                 <figure class="about-figure">
-                    <img src="pilot.jpeg" alt="Cessna 175 Skyhawk" style="max-width: 70%;">
-                    <figcaption><em>Cessna 175 Skyhawk – where everything started</em></figcaption>
+                    <img src="pilot.jpeg" alt="Cessna" style="max-width: 70%;">
+                    <figcaption><em>Cessna – where everything started</em></figcaption>
                 </figure>
         
                 <p><strong>Where everything started</strong><br>
-                The first time I sat in a <strong>Cessna 175 Skyhawk</strong>, I realized physics wasn't just equations on a blackboard — it was lift, drag, thrust, and weight working together in perfect balance. That feeling of takeoff, the hum of the engine, the instruments coming alive… that's when I truly understood the <strong>principles of machines and applied physics</strong>.</p>
+                The first time I sat in a <strong>Cessna</strong>, I realized physics wasn't just equations on a blackboard — it was lift, drag, thrust, and weight working together in perfect balance. That feeling of takeoff, the hum of the engine, the instruments coming alive… that's when I truly understood the <strong>principles of machines and applied physics</strong>.</p>
                 
                 <p>Learning to fly taught me intuition for aerodynamics, control systems, and the beautiful intersection between theory and real-world engineering. It remains my <strong>favourite place</strong> — not just in the sky, but in my journey as a scientist.</p>
             </div>
@@ -130,11 +138,12 @@
             <h2>Work Experience</h2>
 
             <h3>Research Experience</h3>
+            <div class="job-item"><div class="job-title">Final-year project — CMS trigger interpretability</div><div class="job-company">University of Bristol</div><div class="job-date">September 2026–present</div><p>Interpretability of machine-learning models for the CMS Level-1 Trigger at the HL-LHC, supervised by Professor Sudarshan Paramesvaran. I use SHAP to study how constituent features influence jet classification, including impact parameter and differences between b and gluon jets.</p></div>
 
             <div class="job-item">
-                <div class="job-title">LHCb Team</div>
+                <div class="job-title">Research collaboration — UTEC LHCb team</div>
                 <div class="job-company">LHCb Experiment, CERN &middot; Hybrid</div>
-                <div class="job-date">Mar 2026 - Present &middot; 6 mos</div>
+                <div class="job-date">March 2026–present</div>
                 <ul>
                     <li>Contributed as a member of the PID calibration team for the LHCb experiment, focusing on Run 3 data</li>
                     <li>Conducted studies on rare decays B⁺ → K*⁰ K⁺ and B⁺ → φ K⁺</li>
@@ -144,7 +153,7 @@
             <div class="job-item">
                 <div class="job-title">Research Intern</div>
                 <div class="job-company">The Henryk Niewodniczański Institute of Nuclear Physics, Polish Academy of Sciences (IFJ PAN), Cracow, Poland &middot; On-site &middot; Full-time</div>
-                <div class="job-date">Jul 2026 - Aug 2026 &middot; 2 mos</div>
+                <div class="job-date">6–31 July 2026 · Continued collaboration</div>
                 <ul>
                     <li>Analyzed Monte Carlo simulated data for B⁰ → D*⁻ τ⁺ ντ decays using Python and ROOT, and developed a Boosted Decision Tree (BDT) with AdaBoost for signal-background separation</li>
                     <li>Studied the reconstruction resolution of the T-odd triple product (sensitive to transverse tau polarization and CP violation), identified and corrected biases in online reconstruction, and scaled the expected sensitivity for future Belle II luminosities (up to 50 ab⁻¹)</li>
@@ -187,7 +196,7 @@
             <div class="job-item">
                 <div class="job-title">Tutor</div>
                 <div class="job-company">COMPOS, Oxfordshire, England, United Kingdom &middot; Remote &middot; Part-time</div>
-                <div class="job-date">Oct 2025 - Present &middot; 11 mos</div>
+                <div class="job-date">October 2025–present</div>
                 <p>Provided tutoring in mathematics and physics, covering topics including mechanics, Taylor series, electrostatics, harmonic oscillators, and other foundational concepts in university-level physics and mathematics.</p>
             </div>
         </div>
@@ -196,9 +205,9 @@
         <div id="awards" class="tab-content" role="tabpanel">
             <h2>Awards & Scholarships</h2>
             <ul>
-                <li>Think Big Scholarship – University of Bristol (2024)</li>
+                <li>Think Big Scholarship – University of Bristol (2024): £13,000 per year for three years, plus a £3,000 Science bursary (£42,000 total)</li>
                 <li>Santander Skills Scholarship – Harvard Business Publishing (2023)</li>
-                <li>ELAP Scholarship – Winner (2022)</li>
+                <li>Emerging Leaders in the Americas Program (ELAP) Scholarship (2022): CAD $8,200 for research at the University of Alberta</li>
                 <li>IEC Young Professional – INACAL (2020)</li>
                 <li>National Champion – Brazilian Jiu-Jitsu (2015, 2016)</li>
             </ul>
@@ -214,8 +223,8 @@
                     <p>
                         <strong>sWeights</strong> are a statistical tool used in high-energy physics to 
                         separate signal from background in a mixed sample. Using a control variable 
-                        (typically mass), sWeights assign each event a probability of being signal, 
-                        allowing pure signal distributions to be extracted for any other variable 
+                        (typically mass), sWeights assign statistical weights to events, 
+                        allowing signal distributions to be estimated for variables uncorrelated with the fit variable within each component 
                         (such as PID response). This is particularly important for <strong>Muon 
                         Identification (MuonID)</strong> calibration, where we need to measure the 
                         efficiency and misidentification rates using clean signal samples.
@@ -223,7 +232,7 @@
         
                     <p>
                         This code is an adaptation of the original 
-                        <a href="https://gitlab.cern.ch/lhcb-rta/pidcalib-sweight-fits" target="_blank">pidcalib-sweight-fits</a> 
+                        <a href="https://gitlab.cern.ch/lhcb-rta/pidcalib-sweight-fits" target="_blank" rel="noopener noreferrer">pidcalib-sweight-fits</a> 
                         package developed by <strong>Michele Atzeni</strong>. The original framework 
                         provides sWeight fits for various PID calibration channels. This adaptation 
                         focuses specifically on the <strong>B⁺ → K⁺ J/ψ (→ μ⁺μ⁻)</strong> decay, 
@@ -265,8 +274,7 @@
                             <img src="sweight2.png" alt="sWeight vs Mass">
                             <p class="caption">
                                 <strong>Figure 2:</strong> sWeight as a function of the B meson mass. 
-                                Events near the peak (5278 MeV) have high signal purity (sWeight ≈ 1), 
-                                while sideband events are predominantly background (sWeight ≈ 0).
+                                These statistical weights come from the mass fit and are used to subtract background in distributions of other variables. They can be negative or greater than one; they are not event-by-event signal probabilities.
                             </p>
                         </div>
                     </div>
@@ -287,13 +295,13 @@
                 <div class="project-repo">
                     <h3>Code Repository</h3>
                     <p>
-                        <a href="https://gitlab.cern.ch/apiminch/pid_muon" target="_blank">
+                        <a href="https://gitlab.cern.ch/apiminch/pid_muon" target="_blank" rel="noopener noreferrer">
                             <code>https://gitlab.cern.ch/apiminch/pid_muon</code>
                         </a>
                     </p>
                     <p>
                         <strong>Original reference:</strong> 
-                        <a href="https://gitlab.cern.ch/lhcb-rta/pidcalib-sweight-fits" target="_blank">
+                        <a href="https://gitlab.cern.ch/lhcb-rta/pidcalib-sweight-fits" target="_blank" rel="noopener noreferrer">
                             Michele Atzeni - pidcalib-sweight-fits
                         </a>
                     </p>
@@ -303,10 +311,24 @@
 
         
 
+        <div id="puentes" class="tab-content" role="tabpanel">
+            <div class="eyebrow">Founded in Peru · 2026</div>
+            <h2>Puentes hacia la Ciencia</h2>
+            <p class="lead">Building bridges to science through curiosity, teamwork and practical projects.</p>
+            <p>I founded Puentes hacia la Ciencia to give school students in Peru an opportunity to explore physics and engineering through experiments they can build themselves. The pilot took place at IE 10146 Nuestra Señora del Carmen, in El Arrozal, Motupe, Lambayeque.</p>
+            <div class="impact-grid" aria-label="Pilot participation"><div><strong>18</strong><span>school students</span></div><div><strong>4</strong><span>project groups</span></div><div><strong>2 days</strong><span>in-person activities</span></div><div><strong>1 week</strong><span>remote follow-up</span></div></div>
+            <h3>Learning by building</h3>
+            <p>Students from the third to fifth years of secondary school worked with basic circuits, DC motors and sensors, and practised soldering. In small groups, they developed projects such as a model helicopter and a motor-driven car, then prepared videos explaining their work.</p>
+            <div class="outreach-grid"><article class="project-card"><span class="eyebrow">01 · Explore</span><h3>Make physics tangible</h3><p>Connect ideas about electricity and motion to components students can handle, assemble and test.</p></article><article class="project-card"><span class="eyebrow">02 · Build</span><h3>Work through challenges</h3><p>Give students space to try ideas, troubleshoot their designs and learn together when a project does not work as expected.</p></article><article class="project-card"><span class="eyebrow">03 · Explain</span><h3>Share what they learned</h3><p>Encourage each group to describe its design, demonstrate its project and explain the science behind it.</p></article></div>
+            <div class="intro-callout"><h3>Interested in collaborating?</h3><p>If you would like to support future activities through mentoring, educational materials or a school partnership, I would be glad to hear from you.</p><a class="text-link" href="mailto:adolfo.piminchumo@cern.ch?subject=Puentes%20hacia%20la%20Ciencia">Get in touch →</a></div>
+        </div>
+
         <!-- EXTRACURRICULARS -->
         <div id="extra" class="tab-content" role="tabpanel">
             <h2>Volunteering</h2>
             <ul>
+                <li>Founder – <a href="#puentes">Puentes hacia la Ciencia</a></li>
+                <li>Year 1 Physics Representative and School of Physics Student Helper – Bristol</li>
                 <li>Academic Mentor – Physics I, II & Mathematics I</li>
                 <li>STEAM projects for Peruvian schools – UTEC & Aleup</li>
                 <li>UTEC INVENT</li>
@@ -322,7 +344,7 @@
         <div class="footer">
             © <span id="currentYear">2026</span> Adolfo Piminchumo
         </div>
-    </div>
+    </main>
 </div>
 
 <script src="script.js"></script>
