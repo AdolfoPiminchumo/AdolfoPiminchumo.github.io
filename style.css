@@ -413,3 +413,35 @@ ul li::before {
         right: 15px;
     }
 }
+
+/* Updated typography, outreach cards and small-screen layout */
+:root { --tab-active: #176b8a; --publication-border: #176b8a; }
+body.dark { --tab-active: #176b8a; }
+p { margin-bottom: 16px; }
+a { color: #176b8a; text-underline-offset: 3px; overflow-wrap: anywhere; }
+body.dark a { color: #8bd6e5; }
+.main-content { min-width: 0; }
+.sidebar { flex-shrink: 0; overflow-y: auto; background: linear-gradient(160deg,#20394b,#162734); }
+.tab-btn { padding: 10px 15px; font-size: .92rem; border-radius: 8px 8px 0 0; }
+.tabs { padding-right: 0; margin-top: 35px; }
+h2 { line-height: 1.25; letter-spacing: -.03em; }
+.lead { font-size: 1.16rem; line-height: 1.75; }
+.eyebrow { color: var(--caption-color); font-size: .76rem; text-transform: uppercase; letter-spacing: .13em; font-weight: 700; margin-bottom: 12px; }
+.intro-callout { border: 1px solid var(--border-light); border-left: 4px solid #176b8a; padding: 24px; border-radius: 12px; margin-top: 28px; background: var(--tab-hover); }
+.intro-callout h3 { margin-top: 0; }
+.text-link { font-weight: 650; }
+.impact-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; margin: 30px 0; }
+.impact-grid div { padding: 18px 10px; border: 1px solid var(--border-light); border-radius: 12px; text-align: center; }
+.impact-grid strong { display: block; font-size: 1.8rem; color: var(--heading-color); }
+.impact-grid span { font-size: .8rem; }
+.outreach-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; margin-top: 26px; }
+.outreach-grid .project-card { padding: 20px; margin: 0; }
+.outreach-grid h3 { margin-top: 0; font-size: 1.05rem; }
+.outreach-grid p { font-size: .92rem; margin-bottom: 0; }
+.education-item { margin-bottom: 30px; }
+:focus-visible { outline: 3px solid #db9b32; outline-offset: 4px; }
+.skip-link { position: fixed; top: -80px; left: 12px; background: var(--bg-container); padding: 12px; z-index: 200; }
+.skip-link:focus { top: 12px; }
+@media(max-width: 1050px) { .sidebar { width: 280px; } .main-content { padding: 35px 28px; } .outreach-grid { grid-template-columns: 1fr; } }
+@media(max-width: 800px) { .sidebar { width: 100%; overflow: visible; padding: 32px 22px; } .social-links { flex-direction: row; flex-wrap: wrap; justify-content: center; margin-top: 0; gap: 6px; } .main-content { padding: 24px 20px; } .tabs { margin-top: 35px; } .impact-grid { grid-template-columns: repeat(2,1fr); } .dark-mode-toggle-top { top: 14px; right: 20px; } h2 { font-size: 1.6rem; } }
+@media(prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
